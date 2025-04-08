@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密碼保護頁面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🔐 手機密碼</h2>
+<input type="password" id="password" placeholder="輸入密碼">
+<button onclick="checkPassword()">送出</button>
+
+<div class="error-message" id="error-message"></div>
+<div class="hidden-message" id="hidden-message">
+    <h3>密碼正確！</h3>
+    <p>點擊下面的連結查看內容：</p>
+    <a href="#" id="hidden-link" target="_blank">點此查看內容</a>
+</div>
+
+<script>
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        var correctPassword = "94201314";
+        var errorMessage = document.getElementById("error-message");
+        var hiddenMessage = document.getElementById("hidden-message");
+        var hiddenLink = document.getElementById("hidden-link");
+
+        if (password === correctPassword) {
+            // 密碼正確，顯示內容
+            errorMessage.textContent = '';
+            hiddenMessage.style.display = 'block';
+            hiddenLink.href = "https://docs.google.com/document/d/1pSYtg6PuYxV6heD84Oc_wZjxBFCdwgvm-59Pxn-GRSA/edit?usp=sharing"; // 替換為你的Google Docs連結
+        } else {
+            // 密碼錯誤，顯示錯誤訊息
+            errorMessage.textContent = "密碼錯誤，請再試一次！";
+            hiddenMessage.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
