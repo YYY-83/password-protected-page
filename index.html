@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<h2>🔐 請輸入密碼</h2>
+<h2>🔐 手機密碼</h2>
 <input type="password" id="password" placeholder="輸入密碼">
 <button onclick="checkPassword()">送出</button>
 
@@ -45,7 +45,7 @@
             // 密碼正確，顯示內容
             errorMessage.textContent = '';
             hiddenMessage.style.display = 'block';
-            hiddenLink.href = "YOUR_GOOGLE_DOCS_LINK_HERE"; // 替換為你的Google Docs連結
+            hiddenLink.href = "https://docs.google.com/document/d/1pSYtg6PuYxV6heD84Oc_wZjxBFCdwgvm-59Pxn-GRSA/edit?usp=sharing"; // 替換為你的Google Docs連結
         } else {
             // 密碼錯誤，顯示錯誤訊息
             errorMessage.textContent = "密碼錯誤，請再試一次！";
